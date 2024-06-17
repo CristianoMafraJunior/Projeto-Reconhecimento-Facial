@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   startCameraBtn.addEventListener('click', startVideo);
 
   const loadLabels = () => {
-      const labels = ['Henzo'];
+      const labels = ['Henzo', 'Leo', 'Cristiano'];
       return Promise.all(labels.map(async label => {
           const descriptions = [];
           for (let i = 1; i <= 5; i++) {
