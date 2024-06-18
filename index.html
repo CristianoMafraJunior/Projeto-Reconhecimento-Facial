@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Video | Reconhecimento Facial com FaceAPI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
-    <button id="start-camera-btn">Start Camera</button>
-    <video autoplay id="cam" width="720" height="560" muted></video>
+    <div class="container-fluid d-flex flex-column justify-content-between h-100">
+        <header class="text-center mt-4">
+            <h1>Reconhecimento Facial com FaceAPI</h1>
+        </header>
+
+        <main class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+            <video autoplay id="cam" width="720" height="560" muted></video>
+            <canvas id="overlay"></canvas>
+            <button id="start-camera-btn" class="btn btn-primary mt-3">Iniciar Camera</button>
+        </main>
+
+        <footer class="text-center mb-4">
+            <p>&copy; 2024 Unifebe - Reconhecimento Facial</p>
+        </footer>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./assets/lib/face-api/face-api.min.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>

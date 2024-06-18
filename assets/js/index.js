@@ -13,21 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
                                   cam.srcObject = stream;
                               })
                               .catch(error => {
-                                  console.error('Error accessing camera:', error);
+                                  console.error('Erro ao acessar a câmera:', error);
                               });
                       }
                   });
               }
           })
           .catch(error => {
-              console.error('Error enumerating devices:', error);
+              console.error('Erro ao enumerar dispositivos:', error);
           });
   };
 
   startCameraBtn.addEventListener('click', startVideo);
 
   const loadLabels = () => {
-      const labels = ['Henzo', 'Leo', 'Cristiano'];
+      const labels = ['Henzo', 'Leo', 'Cristiano', 'Caua', 'Eryck'];
       return Promise.all(labels.map(async label => {
           const descriptions = [];
           for (let i = 1; i <= 5; i++) {
@@ -92,6 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
               new faceapi.draw.DrawTextField([
                   `${label} (${parseInt(distance * 100, 10)})`
               ], box.bottomRight).draw(canvas);
+                
+              if (label !== 'unknown') {
+                localStorage.setItem('usuarioReconhecido', label);
+                setTimeout(() => {
+                    window.location.href = '/jogo.html'; 
+                }, 6000); 
+            }
           });
       }, 100);
   });

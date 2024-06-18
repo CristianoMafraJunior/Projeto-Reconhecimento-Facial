@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+h1{
+    color: white;
+    margin: 20px 0 10px 0;
+}
+
+.tela-body{
+    height: 90vh;
+    width: 100vw;
+    background-color: black;
+}
+
+.instrucoes p:nth-child(1) {
+    margin: 20px 0 10px 0;
+    color: #acacac;
+}
+
+.instrucoes p {
+    color: #acacac;
+    margin-bottom: 15px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.instrucoes {
+    height: 90px;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-board{
+    width: 80%;
+    height: 500px;
+    border: 1px solid #333;
+    border-bottom: 10px solid #00a708;
+    background: linear-gradient(#0084d1, #c9ecff);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    animation: pipeAnimation 2s infinite linear;
+}
+.mario{
+    position: absolute;
+    bottom: 0px;
+    width: 130px;
+}
+
+.jump{
+    animation: marioJump 500ms ease-out;
+}
+
+.clouds{
+    position: absolute;
+    width: 600px;
+    height: 200px;
+    margin-top: 10px;
+    animation: cloudsAnimation 4s infinite linear;
+}
+
+.game-status{
+    width: 100%;
+    position: absolute;
+}
+
+.game-over{
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttonStart{
+    width: 152px;
+    height: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+}
+.buttonStart:hover{
+    width: 162px;
+    height: 55px;
+}
+.buttonStart:hover img{
+    width: 162px;
+    height: 50px;
+}
+
+@keyframes pipeAnimation{
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes marioJump{
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 140px;
+    }
+    50%{
+        bottom: 150px;
+    }
+    60%{
+        bottom: 140px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+@keyframes cloudsAnimation{
+    from{
+        right: -600px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@media screen and (max-width: 760px){
+    .tela-body{
+        width: 100vw;
+    } 
+    .game-board{
+        width: 100%;
+        height: 450px;
+    }
+    .game-status{
+        margin-top: 150px;
+    }
+    .game-over{
+        width: 300px;
+        margin: 0 auto;
+    }
+    .pipe{
+        width: 50px;
+        height: 50px;
+    }
+    .mario{
+        width: 100px;
+    }
+    .start{
+        width: 150px;
+    }
+    .buttonStart{
+        width: 150px;
+        margin: 0 auto;
+    }
+    .instrucoes{
+        height: 100px;
+        width: 100%;
+        font-weight: bold;
+        font-size: 13px;
+        margin: 0 10px;
+    }
+    .instrucoes p {
+        color: #ffffff;
+        margin-bottom: 15px;
+        margin-top: 0px;
+    }
+    .clouds{
+        width: 500px;
+        height: 150px;
+    }
+}
+@media screen and (max-width: 420px){
+    .instrucoes p:nth-child(1) {
+        display: none;
+    }
+    .instrucoes p {
+        margin: 0px;
+    }
+    .instrucoes{
+        height: 70px;
+    }
+    .pipe{
+        animation: pipeAnimation 1.5s infinite linear;
+    }
+    .game-over{
+        width: 230px;
+    }
+    .start{
+        width: 120px;
+    }
+    .buttonStart{
+        width: 120px;
+        margin: 0 auto;
+    }
+
+    @keyframes marioJump{
+        0%{
+            bottom: 0;
+        }
+        30%{
+            bottom: 140px;
+        }
+        50%{
+            bottom: 150px;
+        }
+        70%{
+            bottom: 140px;
+        }
+        100%{
+            bottom: 0;
+        }
+    }
+}
